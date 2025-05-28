@@ -1,3 +1,34 @@
+#include <SFML/Graphics/RenderWindow.hpp>
+#include "platengine/RenderSystem.h"
+#include "platengine/InputSystem.h"
+
+int main() {
+    sf::RenderWindow window{ sf::VideoMode({800, 600}), "Minimal Example" };
+
+    RenderSystem renderSystem;
+    InputSystem inputSystem;
+
+    float playerX = 400, playerY = 300;
+    bool running = true;
+
+    while (window.isOpen() && running) {
+        inputSystem.processInput(window, playerX, playerY, running);
+        renderSystem.render(playerX, playerY);
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
 #include <SFML/Graphics.hpp>
 #include "../include/Player.h"
 
@@ -26,4 +57,4 @@ int main()
         player.draw(window);
         window.display();
     }
-}
+}*/

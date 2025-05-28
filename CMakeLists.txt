@@ -20,7 +20,7 @@ add_library(platengine
     engine/src/InputSystem.cpp
     engine/src/ResourceManager.cpp
     engine/src/SceneManager.cpp
- "engine/src/aaa.cpp")
+ )
 
 target_include_directories(platengine PUBLIC
     ${CMAKE_SOURCE_DIR}/engine/include

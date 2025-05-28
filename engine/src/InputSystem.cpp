@@ -10,8 +10,8 @@ void InputSystem::processInput(sf::RenderWindow& window, float& playerX, float& 
         }
     }
     // Клавиши для управления квадратом
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))  playerX -= 3.f;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) playerX += 3.f;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))    playerY -= 3.f;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))  playerY += 3.f;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))  playerX -= 0.3f;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) playerX += 0.3f;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))    playerY -= 0.3f;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))  playerY += 0.3f;
 }
