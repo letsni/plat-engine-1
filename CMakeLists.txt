@@ -12,7 +12,7 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(main sample/littlePlatform/src/main.cpp)
+add_executable(main sample/littlePlatform/src/main.cpp "engine/include/platengine/RenderSystem.h" "engine/include/platengine/PhysicsSystem.h" "engine/include/platengine/InputSystem.h" "engine/include/platengine/ResourceManager.h" "engine/src/RenderSystem.cpp" "engine/src/Entity.cpp" "engine/src/PhysicsSystem.cpp" "engine/src/InputSystem.cpp" "engine/src/ResourceManager.cpp" "engine/include/platengine/SceneManager.h" "engine/src/SceneManager.cpp")
 target_compile_features(main PRIVATE cxx_std_17)
 target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR}/include)
 target_link_libraries(main PRIVATE SFML::Graphics)
