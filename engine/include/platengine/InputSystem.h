@@ -1,10 +1,8 @@
 #pragma once
+#include <SFML/Window/Event.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
 
-namespace platengine {
-    class InputSystem {
-    public:
-        void init();
-        void shutdown();
-        void update();
-    };
-}
+class InputSystem {
+public:
+    void processInput(sf::RenderWindow& window, float& playerX, float& playerY, bool& running);
+};

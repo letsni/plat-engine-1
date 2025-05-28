@@ -20,7 +20,7 @@ add_library(platengine
     engine/src/InputSystem.cpp
     engine/src/ResourceManager.cpp
     engine/src/SceneManager.cpp
-)
+ "engine/src/aaa.cpp")
 
 target_include_directories(platengine PUBLIC
     ${CMAKE_SOURCE_DIR}/engine/include
@@ -28,7 +28,7 @@ target_include_directories(platengine PUBLIC
 
 # 2. Исполняемый файл игры/примера
 add_executable(main sample/littlePlatform/src/main.cpp)
-
+target_link_libraries(platengine PUBLIC SFML::Graphics)
 target_link_libraries(main PRIVATE platengine SFML::Graphics)
 
 target_include_directories(main PRIVATE
