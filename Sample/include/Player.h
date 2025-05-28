@@ -1,16 +1,17 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "Entity.h"  // Подключаем базовый класс
 
-class Player {
+class Player : public Entity {  // Наследуемся от Entity
 public:
-    Player(): 
+    Player() :
         shape(sf::Vector2f(50.f, 100.f)),
         velocity(0.f, 0.f),
         speed(300.f),
         jumpPower(850.f),
         isOnGround(false)
     {
-        shape.setFillColor(sf::Color::Green);
+        shape.setFillColor(sf::Color::Red);
         shape.setPosition(sf::Vector2f(100.f, 600.f)); // начальная позиция
     }
 
@@ -27,7 +28,7 @@ public:
         }
     }
 
-    void update(float dt) {
+    void update(float dt) override { // override обязательно!
         const float gravity = 1800.f;
         velocity.y += gravity * dt;
         shape.move(velocity * dt);
@@ -40,7 +41,7 @@ public:
         }
     }
 
-    void draw(sf::RenderWindow& window) {
+    void draw(sf::RenderWindow& window) override { // override обязательно!
         window.draw(shape);
     }
 private:
