@@ -14,6 +14,7 @@ int main()
         {
             if (event->is<sf::Event::Closed>())
             {
+                //if we tap window closes
                 window.close();
             }
         }
