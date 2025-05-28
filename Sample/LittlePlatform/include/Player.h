@@ -1,8 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Entity.h"  // Подключаем базовый класс
 
-class Player : public Entity {  // Наследуемся от Entity
+class Player {  // Наследуемся от Entity
 public:
     Player() :
         shape(sf::Vector2f(50.f, 100.f)),
@@ -28,7 +27,7 @@ public:
         }
     }
 
-    void update(float dt) override { // override обязательно!
+    void update(float dt) { 
         const float gravity = 1800.f;
         velocity.y += gravity * dt;
         shape.move(velocity * dt);
@@ -41,7 +40,7 @@ public:
         }
     }
 
-    void draw(sf::RenderWindow& window) override { // override обязательно!
+    void draw(sf::RenderWindow& window) { 
         window.draw(shape);
     }
 private:
