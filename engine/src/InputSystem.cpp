@@ -1,4 +1,4 @@
-#include "../platengine/InputSystem.h"
+#include "platengine/InputSystem.h"
 
 namespace platengine {
 	void InputSystem::init() {}
