@@ -3,7 +3,7 @@
 #include "platengine/InputSystem.h"
 
 int main() {
-    sf::RenderWindow window{ {800, 600}, "Minimal Example" };
+    sf::RenderWindow window{ sf::VideoMode({800, 600}), "Minimal Example" };
 
     RenderSystem renderSystem;
     InputSystem inputSystem;
@@ -13,7 +13,7 @@ int main() {
 
     while (window.isOpen() && running) {
         inputSystem.processInput(window, playerX, playerY, running);
-        renderSystem.render(window, playerX, playerY);
+        renderSystem.render(playerX, playerY);
     }
     return 0;
 }

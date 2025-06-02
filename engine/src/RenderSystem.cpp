@@ -22,3 +22,6 @@ bool RenderSystem::isWindowOpen() const {
 void RenderSystem::closeWindow() {
     window.close();
 }
+sf::RenderWindow& RenderSystem::getWindow() {
+    return window;
+}

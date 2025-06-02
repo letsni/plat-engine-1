@@ -20,14 +20,14 @@ add_library(platengine
     engine/src/InputSystem.cpp
     engine/src/ResourceManager.cpp
     engine/src/SceneManager.cpp
- )
+  "engine/include/platengine/components/Position.h" "engine/include/platengine/components/Velocity.h" "engine/include/platengine/components/Sprite.h" "engine/include/platengine/ComponentManager.h" "engine/include/platengine/Registry.h" "engine/include/platengine/MovementSystem.h" "engine/include/platengine/Game.h" "engine/src/Game.cpp")
 
 target_include_directories(platengine PUBLIC
     ${CMAKE_SOURCE_DIR}/engine/include
 )
 
 # 2. Исполняемый файл игры/примера
-add_executable(main sample/littlePlatform/src/main.cpp)
+add_executable(main sample/littlePlatform/src/main.cpp "engine/include/platengine/components/Position.h" "engine/include/platengine/components/Velocity.h" "engine/include/platengine/components/Sprite.h" "engine/include/platengine/ComponentManager.h" "engine/include/platengine/Registry.h" "engine/include/platengine/MovementSystem.h" "engine/include/platengine/Game.h" "engine/src/Game.cpp")
 target_link_libraries(platengine PUBLIC SFML::Graphics)
 target_link_libraries(main PRIVATE platengine SFML::Graphics)
 

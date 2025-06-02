@@ -1,9 +1,5 @@
 #pragma once
+#include <cstdint>
 
-namespace platengine {
-    class Entity {
-    public:
-        virtual ~Entity() = default;
-        virtual void update(float dt);
-    };
-}
+using Entity = std::uint32_t;
+constexpr Entity INVALID_ENTITY = 0;

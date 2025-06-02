@@ -9,6 +9,8 @@ public:
     bool isWindowOpen() const;
     void closeWindow();
 
+    sf::RenderWindow& getWindow();
+
 private:
     sf::RenderWindow window;
     sf::RectangleShape player;
