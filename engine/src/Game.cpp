@@ -32,6 +32,17 @@ void Game::handleInput(float /*dt*/, bool& running) {
             running = false;
             window.close();
         }
+        auto* vel = componentManager.getComponent<Velocity>(player);
+        if (vel) {
+            vel->dx = 0;
+            vel->dy = 0;
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))  vel->dx = -200;
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) vel->dx = 200;
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))    vel->dy = -200;
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))  vel->dy = 200;
+        }
+
+
         // Добавь обработку других типов событий при необходимости
     }
 }
